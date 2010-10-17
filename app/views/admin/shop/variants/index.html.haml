@@ -1,0 +1,13 @@
+- @page_title = t('variants') + ' - ' + default_page_title
+
+.outset
+
+  #head.min
+    = render :partial => '/admin/shop/variants/index/head'
+
+  #variants_map.map
+    %ul#variants
+      = render :partial => '/admin/shop/variants/index/variant', :collection => @shop_variants
+
+  #actions
+    = render :partial => '/admin/shop/variants/index/foot'

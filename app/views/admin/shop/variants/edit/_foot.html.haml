@@ -1,0 +1,9 @@
+- render_region :foot do |foot|
+  - foot.buttons do
+    %p.buttons
+      = save_model_button(@shop_variant)
+      = save_model_and_continue_editing_button(@shop_variant)
+      = t('or')
+      = link_to t('cancel'), admin_shop_variants_path
+  - foot.timestamp do
+    = updated_stamp @shop_variant

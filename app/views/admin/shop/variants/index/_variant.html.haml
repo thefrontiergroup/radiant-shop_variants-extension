@@ -1,0 +1,9 @@
+%li.variant.object{:id => "variant_#{variant.id}", :'data-id' => variant.id}
+  .attributes
+    %span.name.attribute
+    - render_region :body do |body|
+      - body.name do
+        %span.name.attribute= link_to variant.name, edit_admin_shop_variant_path(variant)
+      - body.modify do
+        .modify
+          %span.remove= link_to t('remove'), remove_admin_shop_variant_path(variant)

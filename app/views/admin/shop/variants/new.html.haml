@@ -1,0 +1,11 @@
+- @page_title = t('new_variant')
+
+- render_region :main do |main|
+  - main.head do
+    = render 'admin/shop/variants/edit/head'
+
+  - main.popups do
+    = render 'admin/shop/variants/edit/popups'
+
+  - main.form do
+    = render 'admin/shop/variants/edit/form'
