@@ -1,0 +1,6 @@
+%h3.title Variant Templates
+
+%ul#templates
+  = render :partial => '/admin/shop/products/edit/shared/template', :collection => ShopVariant.all
+
+%a#browse_templates_popup_close.close{ :href => '#browse_templates_popup_close' }

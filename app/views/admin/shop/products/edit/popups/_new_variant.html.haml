@@ -1,0 +1,16 @@
+%h3.title New Variant
+
+.popup_content
+  - form_for :shop_product_variant, :url => admin_shop_product_variants_path(@shop_product.id) do |f|
+    = f.hidden_field :product_id, :value => @shop_product.id
+    %ol
+      %li.name
+        = f.label :name
+        = f.text_field :name
+      %li.price
+        = f.label :price, t('price_variation')
+        = f.text_field :price
+      %li.submit
+        = f.submit 'Create'
+
+%a#new_variant_popup.close{ :href => '#new_variant_popup' }

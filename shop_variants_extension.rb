@@ -16,8 +16,12 @@ class ShopVariantsExtension < Radiant::Extension
   # See your config/routes.rb file in this extension to define custom routes
   
   def activate
-    # tab 'Content' do
-    #   add_item "Shop Variants", "/admin/shop_variants", :after => "Pages"
-    # end
+    unless defined? admin.variants
+      Radiant::AdminUI.send :include, ShopVariants::Interface::Variants
+      
+      admin.variants = Radiant::AdminUI.load_default_shop_variants_regions
+    end
+    
+    Admin::Shop::ProductsController.send :include, ShopVariants::Controllers::ProductsController
   end
 end

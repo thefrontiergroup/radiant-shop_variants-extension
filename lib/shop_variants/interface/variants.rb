@@ -1,4 +1,4 @@
-module Shop
+module ShopVariants
   module Interface
     module Variants
       

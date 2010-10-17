@@ -1,0 +1,10 @@
+%li.variant{ :id => "product_#{@shop_product.id}_variant_#{vf.object.id}", :'data-variant_id' => vf.object.id }
+  %span.name
+    = vf.text_field :name
+  %span.price
+    = vf.label :price, '$'
+    = vf.text_field :price, :value => input_currency(vf.object.read_attribute(:price))
+  %span.value
+    = number_to_currency(vf.object.price)
+  %span.actions
+    %span.delete

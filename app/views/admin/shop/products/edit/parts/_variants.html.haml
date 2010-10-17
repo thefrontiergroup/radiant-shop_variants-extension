@@ -1,0 +1,3 @@
+%ul#variants
+  - f.fields_for :variants do |vf|
+    = render :partial => 'admin/shop/products/edit/shared/variant', :locals => { :vf => vf }
