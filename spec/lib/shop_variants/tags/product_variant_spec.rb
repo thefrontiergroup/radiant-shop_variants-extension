@@ -1,11 +1,11 @@
 require 'spec/spec_helper'
 
-describe Shop::Tags::ProductVariant do
+describe ShopVariants::Tags::ProductVariant do
   
   dataset :pages, :shop_product_variants, :shop_products
   
   it 'should describe these tags' do
-    Shop::Tags::ProductVariant.tags.sort.should == [
+    ShopVariants::Tags::ProductVariant.tags.sort.should == [
       'shop:product:variants',
       'shop:product:variants:each',
       'shop:product:variants:if_variants',
@@ -63,7 +63,7 @@ describe Shop::Tags::ProductVariant do
 
       context 'failure' do
         it 'should not render' do
-          mock(Shop::Tags::Helpers).current_product_variants(anything) { [] }
+          mock(ShopVariants::Tags::Helpers).current_product_variants(anything) { [] }
             
           tag = %{<r:shop:product:variants:if_variants>failure</r:shop:product:variants:if_variants>}
           exp = %{}
@@ -75,7 +75,7 @@ describe Shop::Tags::ProductVariant do
     describe '<r:shop:product:variants:unless_variants>' do
       context 'success' do
         it 'should render' do
-          mock(Shop::Tags::Helpers).current_product_variants(anything) { [] }
+          mock(ShopVariants::Tags::Helpers).current_product_variants(anything) { [] }
           
           tag = %{<r:shop:product:variants:unless_variants>success</r:shop:product:variants:unless_variants>}
           exp = %{success}
@@ -103,7 +103,7 @@ describe Shop::Tags::ProductVariant do
 
       context 'failure' do
         it 'should not render' do
-          mock(Shop::Tags::Helpers).current_product_variants(anything) { [] }
+          mock(ShopVariants::Tags::Helpers).current_product_variants(anything) { [] }
           
           tag = %{<r:shop:product:variants:each>failure</r:shop:product:variants:each>}
           exp = %{}
@@ -115,7 +115,7 @@ describe Shop::Tags::ProductVariant do
     describe '<r:shop:product:variant>' do
       context 'variant exists in the context' do
         it 'should render' do
-          mock(Shop::Tags::Helpers).current_product_variant(anything) { @variant }
+          mock(ShopVariants::Tags::Helpers).current_product_variant(anything) { @variant }
           
           tag = %{<r:shop:product:variant>success</r:shop:product:variant>}
           exp = %{success}
@@ -125,7 +125,7 @@ describe Shop::Tags::ProductVariant do
 
       context 'product does not exist in the context' do
         it 'should not render' do
-          mock(Shop::Tags::Helpers).current_product_variant(anything) { nil }
+          mock(ShopVariants::Tags::Helpers).current_product_variant(anything) { nil }
           
           tag = %{<r:shop:product:variant>failure</r:shop:product:variant>}
           exp = %{}
@@ -136,7 +136,7 @@ describe Shop::Tags::ProductVariant do
     
     context '#attributes' do
       before :each do
-        mock(Shop::Tags::Helpers).current_product_variant(anything) { @variant }
+        mock(ShopVariants::Tags::Helpers).current_product_variant(anything) { @variant }
       end
       
       describe '<r:id />' do

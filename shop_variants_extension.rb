@@ -6,15 +6,6 @@ class ShopVariantsExtension < Radiant::Extension
   description "Describe your extension here"
   url "http://yourwebsite.com/shop_variants"
   
-  # extension_config do |config|
-  #   config.gem 'some-awesome-gem
-  #   config.after_initialize do
-  #     run_something
-  #   end
-  # end
-
-  # See your config/routes.rb file in this extension to define custom routes
-  
   def activate
     unless defined? admin.variants
       Radiant::AdminUI.send :include, ShopVariants::Interface::Variants
@@ -23,5 +14,8 @@ class ShopVariantsExtension < Radiant::Extension
     end
     
     Admin::Shop::ProductsController.send :include, ShopVariants::Controllers::ProductsController
+    
+    ShopProduct.send :include, ShopVariants::Models::Product
+    Page.send        :include, ShopVariants::Tags::ProductVariant
   end
 end

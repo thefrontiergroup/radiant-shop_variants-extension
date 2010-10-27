@@ -44,7 +44,7 @@ module ShopVariants
       tag 'shop:product:variant:price' do |tag|
         attr = tag.attr.symbolize_keys
         
-        Helpers.currency(tag.locals.shop_product_variant.price,attr)
+        Shop::Tags::Helpers.currency(tag.locals.shop_product_variant.price,attr)
       end
       
     end
