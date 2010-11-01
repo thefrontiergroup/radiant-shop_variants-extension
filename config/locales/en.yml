@@ -1,3 +1,14 @@
 ---
 en:
   shop variants: Shop Variants
+  variants: Variants
+  add_variant: Add Variant
+  new_variant: New Variant
+  options: Options
+  remove_variant: Remove Variant
+  text:
+    remove_variant:
+      warning: Removing a variant is irreversible
+  delete_variant: Delete Variant
+  price_variation: Price Variant
+  apply_template: Apply Template

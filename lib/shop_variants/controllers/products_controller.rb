@@ -29,6 +29,11 @@ module ShopVariants
             include_stylesheet 'admin/extensions/shop/variants/edit'
             
             include_javascript 'admin/extensions/shop/variants/edit'
+            
+            @routes << {
+              :name => 'admin_shop_product_variant_path',
+              :path => admin_shop_product_variant_path(@shop_product, ':id')
+            }
           end
           
         end
