@@ -10,14 +10,16 @@ Gem::Specification.new do |s|
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Dirk Kelly"]
   s.date = %q{2010-11-10}
-  s.description = %q{Describe your extension here}
+  s.description = %q{Variants are versions of products, with alternative prices}
   s.email = %q{dk@dirkkelly.com}
   s.extra_rdoc_files = [
     "README"
   ]
   s.files = [
-    "README",
+    ".gitignore",
+     "README",
      "Rakefile",
+     "VERSION",
      "app/controllers/admin/shop/products/variant_templates_controller.rb",
      "app/controllers/admin/shop/products/variants_controller.rb",
      "app/controllers/admin/shop/variants_controller.rb",
@@ -62,6 +64,7 @@ Gem::Specification.new do |s|
      "lib/tasks/shop_variants_extension_tasks.rake",
      "public/javascripts/admin/extensions/shop/variants/edit.js",
      "public/stylesheets/sass/admin/extensions/shop/variants/edit.sass",
+     "radiant-shop_variants-extension.gemspec",
      "shop_variants_extension.rb",
      "spec/controllers/admin/shop/products/variant_templates_controller_spec.rb",
      "spec/controllers/admin/shop/products/variants_controller_spec.rb",
@@ -76,7 +79,7 @@ Gem::Specification.new do |s|
      "spec/spec.opts",
      "spec/spec_helper.rb"
   ]
-  s.homepage = %q{http://yourwebsite.com/shop_variants}
+  s.homepage = %q{http://github.com/thefrontiergroup/shop_variants}
   s.rdoc_options = ["--charset=UTF-8"]
   s.require_paths = ["lib"]
   s.rubygems_version = %q{1.3.7}
