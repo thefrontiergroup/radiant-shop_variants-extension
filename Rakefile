@@ -3,13 +3,14 @@ begin
   Jeweler::Tasks.new do |gem|
     gem.name = "radiant-shop_variants-extension"
     gem.summary = %Q{Shop Variants Extension for Radiant CMS}
-    gem.description = %Q{Variants are versions of products, with alternative prices}
+    gem.description = %Q{RadiantShop: Create variants of products, with alternative prices}
     gem.email = "dk@dirkkelly.com"
     gem.homepage = "http://github.com/thefrontiergroup/shop_variants"
     gem.authors = ["Dirk Kelly"]
     gem.add_dependency 'radiant-shop-extension'
     # gem is a Gem::Specification... see http://www.rubygems.org/read/chapter/20 for additional settings
   end
+  Jeweler::GemcutterTasks.new
 rescue LoadError
   puts "Jeweler (or a dependency) not available. This is only required if you plan to package shop_variants as a gem."
 end
