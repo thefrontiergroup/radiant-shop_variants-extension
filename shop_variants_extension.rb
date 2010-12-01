@@ -2,9 +2,9 @@
 # require_dependency 'application_controller'
 
 class ShopVariantsExtension < Radiant::Extension
-  version "1.0"
-  description "Describe your extension here"
-  url "http://yourwebsite.com/shop_variants"
+  version YAML::load_file(File.join(File.dirname(__FILE__), 'VERSION'))
+  description "Create variants of products, with alternative prices"
+  url "https://github.com/thefrontiergroup/radiant-shop_variants-extension"
   
   def activate
     unless defined? admin.variants
