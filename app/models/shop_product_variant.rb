@@ -33,4 +33,8 @@ class ShopProductVariant < ActiveRecord::Base
     product.slug
   end
   
+  def url
+    product.url
+  end
+  
 end

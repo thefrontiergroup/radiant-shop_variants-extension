@@ -80,6 +80,15 @@ describe ShopProductVariant do
     end
   end
   
+  describe '#url' do
+    before :each do
+      @product_variant = shop_product_variants(:mouldy_crusty_bread)
+    end
+    it 'should return a concatenation of its name and products sku' do
+      @product_variant.url.should === @product_variant.product.url
+    end
+  end
+  
   describe '#sku' do
     before :each do
       @product_variant = shop_product_variants(:mouldy_crusty_bread)
