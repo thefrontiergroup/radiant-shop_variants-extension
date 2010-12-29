@@ -1,5 +1,4 @@
 ActionController::Routing::Routes.draw do |map|
-
   
   map.namespace :admin do |admin|
     admin.namespace :shop, :member => { :remove => :get } do |shop| 
@@ -9,7 +8,8 @@ ActionController::Routing::Routes.draw do |map|
         product.resources :variant_templates, :controller => 'products/variant_templates',  :only => [ :update ]
       end
       shop.resources :variants
-
+      shop.resources :product_variants, :controller => 'products'
+      
     end
   end
 

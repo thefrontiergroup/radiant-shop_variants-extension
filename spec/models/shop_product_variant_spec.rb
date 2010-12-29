@@ -46,6 +46,11 @@ describe ShopProductVariant do
         @product_variant.valid?.should be_true
       end
     end
+    context 'to_param' do
+      it 'should return to product param' do
+        @product_variant.to_param.should === @product_variant.product.to_param
+      end
+    end
   end
   
   describe '#price' do

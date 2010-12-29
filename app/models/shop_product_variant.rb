@@ -37,4 +37,8 @@ class ShopProductVariant < ActiveRecord::Base
     product.url
   end
   
+  def to_param
+    product.to_param
+  end
+  
 end
