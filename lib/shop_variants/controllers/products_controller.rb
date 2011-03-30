@@ -34,6 +34,10 @@ module ShopVariants
               :name => 'admin_shop_product_variant_path',
               :path => admin_shop_product_variant_path(@shop_product, ':id')
             }
+            @routes << {
+              :name => 'sort_admin_shop_product_variants_path',
+              :path => sort_admin_shop_product_variants_path(@shop_product)
+            }
           end
           
         end

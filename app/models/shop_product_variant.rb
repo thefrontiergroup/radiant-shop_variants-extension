@@ -1,7 +1,9 @@
 class ShopProductVariant < ActiveRecord::Base
   
   belongs_to :product, :class_name => 'ShopProduct', :foreign_key => :product_id
-  
+  acts_as_list  :scope => :product
+  default_scope :order => :position
+
   validates_presence_of   :product
   validates_presence_of   :name
   validates_uniqueness_of :name, :scope => :product_id
@@ -14,6 +16,10 @@ class ShopProductVariant < ActiveRecord::Base
   has_many  :discountables, :class_name => 'ShopDiscountable',      :foreign_key  => :discounted_id
   has_many    :discounts,   :class_name => 'ShopDiscount',          :through      => :discountables
   
+  def name
+    %{#{product.name} #{self[:name]}}
+  end
+  
   # Returns the price of the variant plus the product price
   def price
     price = product.price
@@ -25,7 +31,11 @@ class ShopProductVariant < ActiveRecord::Base
   
   # Returns a mixed sku of product and variant name
   def sku
-    %{#{product.sku}-#{ShopProduct.to_sku(name)}}
+    sku = nil
+    if self[:name].present?
+      sku = %{#{product.sku}-#{self[:name].gsub(/[^a-zA-Z0-9_]/,"_")}}
+    end
+    sku
   end
   
   # Returns slug of the product

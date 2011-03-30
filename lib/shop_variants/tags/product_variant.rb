@@ -33,7 +33,11 @@ module ShopVariants
         tag.expand if tag.locals.shop_product_variant.present?
       end
       
-      [:id, :name, :sku].each do |symbol|
+      tag 'shop:product:variant:name' do |tag|
+        tag.locals.shop_product_variant[:name]
+      end
+      
+      [:id, :sku].each do |symbol|
         desc %{ outputs the #{symbol} of the current shop variant }
         tag "shop:product:variant:#{symbol}" do |tag|
           tag.locals.shop_product_variant.send(symbol)

@@ -4,7 +4,7 @@ module ShopVariants
       
       def self.included(base)
         base.class_eval do
-          has_many :variants, :class_name => 'ShopProductVariant', :foreign_key  => :product_id, :dependent => :destroy, :order => 'name ASC'
+          has_many :variants, :class_name => 'ShopProductVariant', :foreign_key  => :product_id, :dependent => :destroy, :order => :position
           
           accepts_nested_attributes_for :variants
         end

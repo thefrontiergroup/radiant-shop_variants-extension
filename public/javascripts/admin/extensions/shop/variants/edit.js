@@ -10,6 +10,26 @@ document.observe("dom:loaded", function() {
 var ShopVariantEdit = Class.create({
   
   initialize: function() {
+    this.variantsSort();
+  },
+
+  variantsSort: function(element) {
+    var route = shop.getRoute('sort_admin_shop_product_variants_path');
+
+    Sortable.create('variants', {
+      constraint: false, 
+      overlap: 'horizontal',
+      containment: ['variants'],
+      onUpdate: function(element) {
+        new Ajax.Request(route, {
+          method: 'put',
+          parameters: {
+            'product_id': $('shop_product_id').value,
+            'variants':   Sortable.serialize('variants')
+          }
+        });
+      }.bind(this)
+    })
   },
   
   variantRemove: function(element) {
