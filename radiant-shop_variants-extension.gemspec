@@ -82,7 +82,7 @@ Gem::Specification.new do |s|
   ]
   s.homepage = %q{https://github.com/thefrontiergroup/radiant-shop_variants-extension}
   s.require_paths = ["lib"]
-  s.rubygems_version = %q{1.5.3}
+  s.rubygems_version = %q{1.4.1}
   s.summary = %q{Shop Variants Extension for Radiant CMS}
   s.test_files = [
     "spec/controllers/admin/shop/products/variant_templates_controller_spec.rb",
