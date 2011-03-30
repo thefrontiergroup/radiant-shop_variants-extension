@@ -5,11 +5,11 @@
 
 Gem::Specification.new do |s|
   s.name = %q{radiant-shop_variants-extension}
-  s.version = "0.1.1"
+  s.version = "0.1.2"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Dirk Kelly"]
-  s.date = %q{2010-12-30}
+  s.date = %q{2011-03-30}
   s.description = %q{RadiantShop: Create variants of products, with alternative prices}
   s.email = %q{dk@dirkkelly.com}
   s.extra_rdoc_files = [
@@ -53,6 +53,7 @@ Gem::Specification.new do |s|
     "config/routes.rb",
     "cucumber.yml",
     "db/migrate/20101015162238_setup_shop_variants.rb",
+    "db/migrate/20110330100134_add_position_to_product_variant.rb",
     "features/support/env.rb",
     "features/support/paths.rb",
     "lib/radiant-shop_variants-extension.rb",
@@ -81,7 +82,7 @@ Gem::Specification.new do |s|
   ]
   s.homepage = %q{https://github.com/thefrontiergroup/radiant-shop_variants-extension}
   s.require_paths = ["lib"]
-  s.rubygems_version = %q{1.3.7}
+  s.rubygems_version = %q{1.5.3}
   s.summary = %q{Shop Variants Extension for Radiant CMS}
   s.test_files = [
     "spec/controllers/admin/shop/products/variant_templates_controller_spec.rb",
@@ -98,7 +99,6 @@ Gem::Specification.new do |s|
   ]
 
   if s.respond_to? :specification_version then
-    current_version = Gem::Specification::CURRENT_SPECIFICATION_VERSION
     s.specification_version = 3
 
     if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then
