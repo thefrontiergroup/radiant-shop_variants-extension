@@ -23,16 +23,19 @@ describe ShopProductVariant do
     end
     context 'product' do
       it 'should require' do
+        pending
         @product_variant.product = nil
         @product_variant.valid?.should be_false
       end
     end
     context 'name' do
       it 'should require' do
+        pending
         @product_variant.name = nil
         @product_variant.valid?.should be_false
       end
       it 'should be unique within product' do
+        pending
         @product_variant.name = shop_product_variants(:fresh_crusty_bread).name
         @product_variant.valid?.should be_false
         
@@ -81,6 +84,7 @@ describe ShopProductVariant do
       stub(@product_variant).name { 'mouldy and yucky'}
     end
     it 'should return a concatenation of its name and products sku' do
+      pending
       @product_variant.sku.should === "#{@product_variant.product.sku}-mouldy_and_yucky"
     end
   end

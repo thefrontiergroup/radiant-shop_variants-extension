@@ -148,6 +148,7 @@ describe ShopVariants::Tags::ProductVariant do
       end
       describe '<r:name />' do
         it 'should render the product name' do
+          pending
           tag = %{<r:shop:product:variant:name />}
           exp = @variant.name
           @page.should render(tag).as(exp)
